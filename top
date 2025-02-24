@@ -1,0 +1,1 @@
+pip install requests pystyle номера телефонов dnspython email-validator beautifulsoup4 lxml python-whois tqdm openai python-magic Pillow PyPDF2 openpyxl python-docx python-pptx mutagen tinytag
