@@ -147,7 +147,7 @@ When you run the script, it will present you with a menu. Simply type the number
 
 - **IN ORDER FOR THE PASSWORD STRENGTH ANALYZER TO WORK PROPERLY, YOU MUST OPEN CLATSCOPE INFO TOOL IN THE FOLDER THAT HAS "PASSWORDS.TXT"**
 
-- You will need to enter your own Google Custom Search, OpenAI, Botometer, Perplexity & Have I been Pwned API key to use all the features in this tool (unless you subscribe to the above mentioned service).
+- You will need to enter your own RapidAPI, Perplexity, Hunter, Castrick, Predicta & Have I been Pwned & more API keys to use all the features in this tool (unless you subscribe to the above mentioned service).
 - If you want to use the password strength checker against a dictionary or known common-passwords file, place your dictionary file as passwords.txt in the same directory as the script. There is already a dictionary file in the installation package with millions of common passwords.
 - The script references a Google Custom Search API key (API_KEY, CX, and CLIENT_ID), an OpenAI API key, a Perplexity API key, a Botometer API key, and HIBP API key. If you want to use the features that query external services (like Google search or HIBP), you must obtain valid keys and place them in the script.
 - **Important:** If you do not have valid API keys, the related external queries (e.g. person search, reverse phone lookup, business search, travel risk search, Botometer search) will fail or return errors.
