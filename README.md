@@ -93,19 +93,33 @@ ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility sc
 56. **Theme/Color Settings** – Adjust console output color.
 
 57. **RapidAPI Services you need to subscribe to:
+58. 
 -https://rapidapi.com/softrix-technologies-dnschecker/api/mac-address-lookup1
+
 -https://rapidapi.com/letscrape-6bRBa3QguO5/api/reverse-image-search1
+
 -https://rapidapi.com/acelogicgaming/api/osint-tool-investigation
+
 -https://rapidapi.com/Exerra/api/exerra-phishing-check
+
 -https://rapidapi.com/osint-org-osint-org-default/api/x-checker
+
 -https://rapidapi.com/do3t/api/truecaller-data2
+
 -https://rapidapi.com/Canssens/api/identity-generator
+
 -https://rapidapi.com/IgorMicrobilt/api/find-criminal-records-api
+
 -https://rapidapi.com/OSoMe/api/botometer-pro
+
 -https://rapidapi.com/rustychapin/api/known-vulnerability-search
+
 -https://rapidapi.com/breachbeach1/api/phone-leak-search
+
 -https://rapidapi.com/inutil-inutil-default/api/whatsapp-osint
+
 -https://rapidapi.com/apicodex-apis/api/email-intelligence-api
+
 
 (It's possible I may have missed one or two, if you're having trouble, contact me, or post in the discussion etc)
 
