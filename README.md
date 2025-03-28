@@ -93,7 +93,7 @@ ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility sc
 56. **Theme/Color Settings** – Adjust console output color.
 
 57. **RapidAPI Services you need to subscribe to:
-58. 
+
 -https://rapidapi.com/softrix-technologies-dnschecker/api/mac-address-lookup1
 
 -https://rapidapi.com/letscrape-6bRBa3QguO5/api/reverse-image-search1
