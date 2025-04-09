@@ -90,8 +90,7 @@ ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility sc
 53.  **Ship Search** - Shows data about a ship by MMSI number. Shows information of a ship from a location.
 54.  **Aircraft Search** - Retrieves aircraft data by location. Retrieves aircraft data by call sign.
 55.  **Predicta Person Search** - Gives thorough information about a person using Predicta.
-56. **Theme/Color Settings** – Adjust console output color.
-
+56.  **AND MUCH MORE!!**
 57. **RapidAPI Services you need to subscribe to:
 
 -https://rapidapi.com/softrix-technologies-dnschecker/api/mac-address-lookup1
