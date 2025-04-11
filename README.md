@@ -160,9 +160,10 @@ When you run the script, it will present you with a menu. Simply type the number
 
 I welcome any improvements or additional OSINT features!
 
-## License
-This project is released under the Apache 2.0 License.
+**Author**
+Joshua M Clatney (Clats97)
+Ethical Pentesting Enthusiast
 
-Copyright 2025 Joshua M Clatney (Clats97) All Rights Reserved
+Copyright 2025 Joshua M Clatney (Clats97)
 
 **DISCLAIMER: This project comes with no warranty, express or implied. The author is not responsible for abuse, misuse, or vulnerabilities. Please use responsibly and ethically in accordance with relevant laws, regulations, legislation and best practices.**
