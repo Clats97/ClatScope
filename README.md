@@ -161,6 +161,7 @@ When you run the script, it will present you with a menu. Simply type the number
 I welcome any improvements or additional OSINT features!
 
 **Author**
+
 Joshua M Clatney (Clats97)
 
 Ethical Pentesting Enthusiast
