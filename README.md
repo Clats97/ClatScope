@@ -162,6 +162,7 @@ I welcome any improvements or additional OSINT features!
 
 **Author**
 Joshua M Clatney (Clats97)
+
 Ethical Pentesting Enthusiast
 
 Copyright 2025 Joshua M Clatney (Clats97)
