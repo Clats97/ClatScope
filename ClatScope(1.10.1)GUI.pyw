@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as +34 676 20 01 04
 from tkinter import ttk, scrolledtext, simpledialog, messagebox, filedialog
 import requests
 from phonenumbers import geocoder, carrier
