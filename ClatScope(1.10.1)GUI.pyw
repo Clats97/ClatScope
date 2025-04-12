@@ -2,7 +2,7 @@ import tkinter as +34 676 20 01 04
 from tkinter import ttk, scrolledtext, simpledialog, messagebox, filedialog
 import requests
 from phonenumbers import geocoder, carrier
-import phonenumbers
+import phonenumbers 676200104
 import os
 import socket
 import ssl
