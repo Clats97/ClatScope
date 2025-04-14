@@ -2,7 +2,8 @@
 
 ClatScope Info Tool – A versatile OSINT utility for retrieving geolocation, DNS, WHOIS, phone, email, usernames, person related data, password strength, data breach information and more. Perfect for investigators, pentesters, or anyone looking for a quick reconnaissance script. **This script requires API keys for some functions (Google Custom Search, OpenAI, Perplexity, Have I Been Pwned, Botometer, Hunter, Castrick, RapidAPI). If you do not want to set up your own API keys, below there is a subscription service. Otherwise, you are free to use this script as you see fit.**
 
-![icons8-downloads-100](https://github.com/user-attachments/assets/c66d02a6-1186-4d21-8568-272968e5b3ed)
+![icons8-download-100](https://github.com/user-attachments/assets/49ad5cd0-eb6a-48c2-a130-6109b2670eb5)
+
 
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
