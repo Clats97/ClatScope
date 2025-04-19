@@ -2,7 +2,7 @@ import tkinter as
 from tkinter import ttk, scrolledtext, simpledialog, messagebox, filedialog
 import requests
 from phonenumbers import geocoder, carrier
-import phonenumbers 676200104
+import phonenumbers 
 import os
 import socket
 import ssl
