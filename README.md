@@ -20,11 +20,11 @@ ClatScope is an OSINT tool that performs various lookups and analyzes provided d
 
 Throughout the script, a textual UI is presented, prompting the user for inputs (e.g., IP address, phone number). Results are printed in styled ASCII frames using the pystyle library for aesthetics.
 
-**Version:** 1.14 (CLI)1.10.2 (GUI) (2025-02-06)
+**Version:** 1.15 (CLI)1.10.2 (GUI) (2025-04-14)
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 
 ## Description
-ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility script that queries public APIs, DNS records, and other online resources to gather and display information about IPs, domains, emails, phone numbers, and more. You will need to enter the required API keys to take advantage of all the features ClatScope Info Tool v1.02 has to offer.
+ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility script that queries public APIs, DNS records, and other online resources to gather and display information about IPs, domains, emails, phone numbers, and more. You will need to enter the required API keys to take advantage of all the features ClatScope Info Tool v1.15 has to offer.
 
 ## Features
 1. **IP Information** – Extract IP geolocation, ISP, and Google Maps link.  
