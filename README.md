@@ -27,92 +27,83 @@ Throughout the script, a textual UI is presented, prompting the user for inputs 
 ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility script that queries public APIs, DNS records, and other online resources to gather and display information about IPs, domains, emails, phone numbers, and more. You will need to enter the required API keys to take advantage of all the features ClatScope Info Tool v1.15 has to offer.
 
 ## Features
-1. **IP Information** – Extract IP geolocation, ISP, and Google Maps link.  
-2. **Deep Account Search & Username Search** – Check over 250 websites to see if a given username exists.  
-3. **Phone Number Parsing** – Validate phone numbers, determine carriers, and check region.  
-4. **DNS & Reverse DNS** – Retrieve DNS records (A, CNAME, MX, NS) and PTR records.  
-5. **Email Lookup** – Check MX records, validate format, parse email headers for IP addresses, and more.
-6. **Email Breach Search** - Checks Have I Been Pwned to determine if an email address has been compromised.
-7. **Email Header Analysis** - Analyzes an email header and extracts data.
-8. **Person Search** - Look up public details about a person.   
-9. **WHOIS Lookup** – Fetch domain registration details.  
-10. **Password Strength Check** – Rate your password’s strength based on multiple criteria.
-11. **Username Search** - Checks websites for account details, with a different approach compared to the Deep Account Search
-12. **Reverse Phone Search** - Gets references from a number and extracts data from Google.
-13. **Robots.txt / Sitemap.xml Check** - Finds a websites robots.txt and Sitemp.xml files.
-14. **SSL Certificate Search** - Finds a webpage's SSL certificate information 
-15. **DNSBL Search** - Gets blacklist information on a URL
-16. **Website Metadata Fetch** - Retrieves meta tags and more from a website.
-17. **Travel Risk Search** - Provides a detailed, 40 parameter analysis of a geographical location.
-18. **Botometer Search** - Helps identify possible X/Twitter bots. The lower the score, the lower probability it is not a bod. A higher score indicates a higher probability that the account is a bot.
-19. **Business Search** - Provides details about a business.
-20. **Hudson Rock Email Search** - Searches for an email infected with an infostealer.
-21. **Hudson Rock Username Search** - Searches for a username infected with an infostealer.
-22. **Hudson Rock Domain Search** - Searches for a domain infected with an infostealer.
-23. **Hudson Rock IP Address Search** - Searches for an IP address infected with an infostealer.
-24. **Fact Check Search** - Verifies user inputted data.
-25. **Relationship Search** - Analyzes relationships between people and entities.
-26. **File Metadata Search** - Analyzes metadata from various file types.
-27. **Subdomain Search** - Checks a domain for subdomains.
-28. **Domain Search** - Domain info through Hunter.
-29. **Email Search** - Email info search through Hunter.
-30. **Email Verify** - Verifies an email through Hunter.
-31. **Company Search** - Gets company info through Hunter.
-32. **Person Info Search** - Retrieves person info through Hunter.
-33. **Combined Search** - Performs a combined enrichment.
-34. **Email Search** - Does a reverse email search through CastrickClues.
-35. **Domain Search** - Performs a VirusTotal check on a domain.
-36. **Malice Search** - Identifies potential malicious content based on text input.
-37. **Supply / Vendor Search** - Finds information about companies that are suppliers or vendors.
-38. **Business Reputation Search** - Gives details about the reputation of a business.
-39. **Wayback Machine Search** - Allows the user to view archived versions of a website.
-40. **Port Scan** - Scans a domain for open ports.
-41. **Bulk CSV Search** - Extracts IP information from a CSV file.
-42. **Vulnerability Search** - Displays data on known vulnerabilities by keyword.
-43.  **Phone Leak Search** - Enquires whether a phone number is associated with an information leak.
-44.  **AES Encryption / AES Decryption** - Encrypts plaintext with AES-256-CBC. Decrypts ciphertext if the correct key and IV is used.
-45.  **Email Intelligence Search** - Retrieves public information from a provided email.
-46.  **Website Search** - Extracts contact information from a domain / URL.
-47.  **Reddit User Search** - Checks if a user has a Reddit account.
-48.  **TikTok User Search** - Checks if a user is on TikTok.
-49.  **TrueCaller Search** - Checks if a user is using Truecaller.
-50.  **Sex Offender Search** - Identifies sex offenders by name.
-51.  **WhatsApp Search** - Verifies whether a phone number has a WhatsApp account.
-52.  **Skip Trace Search (Name, ID)** - Fetches details about a person by searching a name, or searching an ID number from the name search.
-53.  **Ship Search** - Shows data about a ship by MMSI number. Shows information of a ship from a location.
-54.  **Aircraft Search** - Retrieves aircraft data by location. Retrieves aircraft data by call sign.
-55.  **Predicta Person Search** - Gives thorough information about a person using Predicta.
-56.  **AND MUCH MORE!!**
-57. **RapidAPI Services you need to subscribe to:
+Thank you for clarifying, Josh. Below is a **numbered, one-to-one, full list of 71 OSINT functions**, each with a clear, single-line explanation, directly reflecting your original menu and enhanced to match your latest feature set language and style. The descriptions are concise, technically accurate, and suitable for inclusion in advanced documentation or as a feature overview for ClatScope.
 
--https://rapidapi.com/softrix-technologies-dnschecker/api/mac-address-lookup1
+---
 
--https://rapidapi.com/letscrape-6bRBa3QguO5/api/reverse-image-search1
+1. **IP Address Search** – Extracts IP geolocation, ISP, and provides a Google Maps link.
+2. **Deep Account Search** – Checks over 250 websites for existence of a given username.
+3. **Phone Number Parsing** – Validates phone numbers, determines carriers, and checks region.
+4. **DNS Record Search** – Retrieves DNS records (A, CNAME, MX, NS) for a given domain.
+5. **Email MX Search** – Checks MX records to verify email server configuration.
+6. **Person Name Search** – Looks up public details about a person.
+7. **Reverse DNS Search** – Retrieves PTR records to map IPs back to hostnames.
+8. **Email Header Search** – Analyzes email headers to extract data and originating IPs.
+9. **Email Breach Search** – Checks Have I Been Pwned to see if an email was compromised.
+10. **WHOIS Search** – Fetches domain registration and ownership details.
+11. **Password Analyzer** – Rates your password’s strength based on multiple security criteria.
+12. **Username Search** – Checks websites for account details, different methodology from Deep Account Search.
+13. **Reverse Phone Search** – Gets references for a phone number, including search engine extraction.
+14. **SSL Search** – Retrieves SSL certificate details from a webpage.
+15. **Web Crawler Search** – Finds robots.txt and sitemap.xml files for a website.
+16. **DNSBL Search** – Checks if an IP/domain appears on DNS blacklists.
+17. **Web Metadata Search** – Retrieves meta tags and structured data from a webpage.
+18. **Travel Risk Search** – Provides a 40-parameter detailed travel risk assessment for a location.
+19. **Botometer Search** – Checks X/Twitter accounts for bot likelihood and scoring.
+20. **Business Search** – Provides general information and verification about a business.
+21. **HR Email Search** – Checks if an email is compromised by an infostealer (Hudson Rock).
+22. **HR Username Search** – Checks if a username is linked to infostealer infection (Hudson Rock).
+23. **HR Domain Search** – Checks if a domain has infostealer infection data (Hudson Rock).
+24. **HR IP Search** – Checks if an IP address is associated with infostealer infections (Hudson Rock).
+25. **Fact Check Search** – Analyzes and verifies the truthfulness of user-inputted text.
+26. **Relationship Search** – Maps and analyzes relationships between people, businesses, or entities.
+27. **File Metadata Search** – Extracts metadata from files (images, documents, media, etc.).
+28. **Subdomain Search** – Finds subdomains related to a main domain.
+29. **Domain Search (Hunter.io)** – Retrieves domain information and email sources using Hunter.io.
+30. **Email Search (Hunter.io)** – Searches for emails associated with a domain via Hunter.io.
+31. **Email Verify Search (Hunter.io)** – Verifies the deliverability of an email through Hunter.io.
+32. **Company Search (Hunter.io)** – Enriches and fetches company information through Hunter.io.
+33. **Person Info Search (Hunter.io)** – Retrieves detailed person enrichment through Hunter.io.
+34. **Combined Search (Hunter.io)** – Aggregates multiple enrichment results using Hunter.io.
+35. **Email Search (CastrickClues)** – Performs reverse email lookup for in-depth information.
+36. **Virus Search (VirusTotal)** – Fetches a VirusTotal malware report for a domain.
+37. **Malice Search** – Identifies potential malicious content or scams in text input.
+38. **Supply/Vendor Search** – Provides a risk assessment and information on suppliers/vendors.
+39. **Business Rep Search** – Generates a business reputation overview.
+40. **Wayback Search** – Retrieves historical snapshots from the Internet Archive’s Wayback Machine.
+41. **Port Scan Search** – Scans a domain or IP for open and vulnerable ports.
+42. **Bulk CSV Search** – Performs multiple checks in bulk using uploaded CSV files.
+43. **Phone Leak Search** – Checks if a phone number appears in known leaks or breaches.
+44. **AES Encryption** – Encrypts plaintext using AES-256-CBC with an IV for secure storage.
+45. **AES Decryption** – Decrypts ciphertext using AES-256-CBC, requiring correct key and IV.
+46. **Email Intel Search** – Retrieves public information and reputation data for an email.
+47. **TikTok User Search** – Fetches TikTok account information by username.
+48. **Truecaller Search** – Retrieves phone number details using Truecaller database.
+49. **Skip Trace Search (Name)** – Provides skip tracing details by searching for a person's name.
+50. **Skip Trace Search (ID)** – Provides skip tracing details by searching an ID or related identifier.
+51. **Ship Search v1 (MMSI)** – Looks up ship data by MMSI number.
+52. **Ship Search v2 (Radius/Location)** – Looks up ship data by geographical location (radius search).
+53. **Aircraft Search v1 (Location)** – Retrieves aircraft data by searching a location.
+54. **Aircraft Search v2 (Callsign)** – Retrieves aircraft data by searching by callsign.
+55. **Predicta Search** – Provides comprehensive personal information via Predicta.
+56. **Crim Record Search** – Retrieves a criminal record check from a small (US-only) database.
+57. **Identity Generator** – Generates a false identity for privacy and obfuscation purposes.
+58. **Virtual Phone Search** – Verifies if a phone number is virtual/VoIP.
+59. **MAC Address Search** – Retrieves detailed info on MAC addresses and associated IPs.
+60. **AutoScan Search** – Produces an in-depth automated OSINT scan report.
+61. **Conflict Search** – Compares and reports on potential conflicts between entities/people.
+62. **Detailed IP Search (IPStack)** – Extracts detailed IP information using the IPStack API.
+63. **Verifone Search (Phone Validation v1)** – Provides detailed phone number validation.
+64. **NumVerify Search (Phone Validation v2)** – Provides additional phone validation via NumVerify.
+65. **General OSINT Search** – Aggregates general open-source data on a target individual.
+66. **Contact Info Search** – Extracts contact info related to a target individual.
+67. **Instagram Search** – Checks if an email is used to register an Instagram account.
+68. **Similar Face Search** – Analyzes two images to determine if they depict the same person.
+69. **Reverse Image Search** – Finds reference sources for a given photograph.
+70. **Reddit User Search** – Checks if a Reddit account exists for the provided username.
+71. **X/Twitter Search** – Verifies if an email is registered on X (Twitter).
 
--https://rapidapi.com/acelogicgaming/api/osint-tool-investigation
-
--https://rapidapi.com/Exerra/api/exerra-phishing-check
-
--https://rapidapi.com/osint-org-osint-org-default/api/x-checker
-
--https://rapidapi.com/do3t/api/truecaller-data2
-
--https://rapidapi.com/Canssens/api/identity-generator
-
--https://rapidapi.com/IgorMicrobilt/api/find-criminal-records-api
-
--https://rapidapi.com/OSoMe/api/botometer-pro
-
--https://rapidapi.com/rustychapin/api/known-vulnerability-search
-
--https://rapidapi.com/breachbeach1/api/phone-leak-search
-
--https://rapidapi.com/inutil-inutil-default/api/whatsapp-osint
-
--https://rapidapi.com/apicodex-apis/api/email-intelligence-api
-
-
-(It's possible I may have missed one or two, if you're having trouble, contact me, or post in the discussion etc)
+---
 
 ## Installation
 1. **Clone the Repository (or download the zip)**:
@@ -138,7 +129,7 @@ When you run the script, it will present you with a menu. Simply type the number
 
 - **IN ORDER FOR THE PASSWORD STRENGTH ANALYZER TO WORK PROPERLY, YOU MUST OPEN CLATSCOPE INFO TOOL IN THE FOLDER THAT HAS "PASSWORDS.TXT"**
 
-- You will need to enter your own RapidAPI, Perplexity, Hunter, Castrick, Predicta & Have I been Pwned & more API keys to use all the features in this tool (unless you subscribe to the above mentioned service).
+- You will need to enter your own RapidAPI, Perplexity, Hunter, Castrick, Predicta, Have I been Pwned & more API keys to use all the features in this tool (unless you subscribe to the above mentioned service).
 - If you want to use the password strength checker against a dictionary or known common-passwords file, place your dictionary file as passwords.txt in the same directory as the script. There is already a dictionary file in the installation package with millions of common passwords.
 - The script references a Google Custom Search API key (API_KEY, CX, and CLIENT_ID), an OpenAI API key, a Perplexity API key, a Botometer API key, and HIBP API key. If you want to use the features that query external services (like Google search or HIBP), you must obtain valid keys and place them in the script.
 - **Important:** If you do not have valid API keys, the related external queries (e.g. person search, reverse phone lookup, business search, travel risk search, Botometer search) will fail or return errors.
