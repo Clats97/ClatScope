@@ -1,6 +1,6 @@
 # ClatScope Info Tool
 
-ClatScope Info Tool – A versatile OSINT utility for retrieving geolocation, DNS, WHOIS, phone, email, usernames, person related data, password strength, data breach information and more. Perfect for investigators, pentesters, or anyone looking for a quick reconnaissance script. **This script requires API keys for some functions (Google Custom Search, OpenAI, Perplexity, Have I Been Pwned, Botometer, Hunter, Castrick, RapidAPI). If you do not want to set up your own API keys, below there is a subscription service. Otherwise, you are free to use this script as you see fit.**
+ClatScope Info Tool – A versatile OSINT utility for retrieving geolocation, DNS, WHOIS, phone, email, usernames, person related data, password strength, data breach information and more. Perfect for investigators, pentesters, or anyone looking for a quick reconnaissance script. **This script requires API keys for some functions (Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, RapidAPI). If you do not want to set up your own API keys, below there is a subscription service. Otherwise, you are free to use this script as you see fit.**
 
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
@@ -20,24 +20,23 @@ ClatScope is an OSINT tool that performs various lookups and analyzes provided d
 
 Throughout the script, a textual UI is presented, prompting the user for inputs (e.g., IP address, phone number). Results are printed in styled ASCII frames using the pystyle library for aesthetics.
 
-**Version:** 1.15 (CLI)1.10.2 (GUI) (2025-04-14)
+**Version:** 1.17 (2025-05-18)
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 
 ## Description
 ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility script that queries public APIs, DNS records, and other online resources to gather and display information about IPs, domains, emails, phone numbers, and more. You will need to enter the required API keys to take advantage of all the features ClatScope Info Tool v1.15 has to offer.
 
 ## Features
-Thank you for clarifying, Josh. Below is a **numbered, one-to-one, full list of 71 OSINT functions**, each with a clear, single-line explanation, directly reflecting your original menu and enhanced to match your latest feature set language and style. The descriptions are concise, technically accurate, and suitable for inclusion in advanced documentation or as a feature overview for ClatScope.
 
 ---
 
 1. **IP Address Search** – Extracts IP geolocation, ISP, and provides a Google Maps link.
-2. **Deep Account Search** – Checks over 250 websites for existence of a given username.
+2. **Deep Account Search** – Checks over 250 websites for the existence of a given username.
 3. **Phone Number Parsing** – Validates phone numbers, determines carriers, and checks region.
 4. **DNS Record Search** – Retrieves DNS records (A, CNAME, MX, NS) for a given domain.
 5. **Email MX Search** – Checks MX records to verify email server configuration.
 6. **Person Name Search** – Looks up public details about a person.
-7. **Reverse DNS Search** – Retrieves PTR records to map IPs back to hostnames.
+7. **Reverse DNS Search** – Retrieves PTR records to map IPs back to host names.
 8. **Email Header Search** – Analyzes email headers to extract data and originating IPs.
 9. **Email Breach Search** – Checks Have I Been Pwned to see if an email was compromised.
 10. **WHOIS Search** – Fetches domain registration and ownership details.
@@ -113,11 +112,10 @@ Thank you for clarifying, Josh. Below is a **numbered, one-to-one, full list of 
 2. **Install Dependencies**:
     Open command prompt and write:
 
-pip install requests pystyle phonenumbers dnspython email-validator beautifulsoup4 lxml python-whois tqdm openai python-magic Pillow PyPDF2 openpyxl python-docx python-pptx mutagen tinytag
-
+pip install phonenumbers openai requests pystyle dnspython email-validator beautifulsoup4 whois tqdm magic pillow PyPDF2 openpyxl python-docx pptx mutagen tinytag
 
  3. **Run the Script**:
-    Click on the Python file or open it in Visual Studio Code 
+    Click on the Python file or open it in Visual Studio Code. 
     
 ## Usage
 When you run the script, it will present you with a menu. Simply type the number corresponding to the function you wish to use, and follow the on-screen prompts. For example:
@@ -129,9 +127,8 @@ When you run the script, it will present you with a menu. Simply type the number
 
 - **IN ORDER FOR THE PASSWORD STRENGTH ANALYZER TO WORK PROPERLY, YOU MUST OPEN CLATSCOPE INFO TOOL IN THE FOLDER THAT HAS "PASSWORDS.TXT"**
 
-- You will need to enter your own RapidAPI, Perplexity, Hunter, Castrick, Predicta, Have I been Pwned & more API keys to use all the features in this tool (unless you subscribe to the above mentioned service).
+- You will need to enter your own Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, RapidAPI API keys to use all the features in this tool (unless you subscribe to the above mentioned service).
 - If you want to use the password strength checker against a dictionary or known common-passwords file, place your dictionary file as passwords.txt in the same directory as the script. There is already a dictionary file in the installation package with millions of common passwords.
-- The script references a Google Custom Search API key (API_KEY, CX, and CLIENT_ID), an OpenAI API key, a Perplexity API key, a Botometer API key, and HIBP API key. If you want to use the features that query external services (like Google search or HIBP), you must obtain valid keys and place them in the script.
 - **Important:** If you do not have valid API keys, the related external queries (e.g. person search, reverse phone lookup, business search, travel risk search, Botometer search) will fail or return errors.
 
 **THIS TOOL IS NOT PERFECT. THERE IS STILL ROOM FOR IMPROVEMENT, AND I AM WORKING ON ADDING NEW FEATURES AND REFINEMENTS. SOMETIMES A USERNAME SEARCH WILL RESULT IN A FALSE POSITIVE AND/OR THE URL WILL NOT RESOLVE. IT HAS BEEN TESTED AND IS ACCURATE, BUT NOT 100% ACCURATE. VERIFY THE OUTPUTS IF YOU ARE NOT SURE.**
