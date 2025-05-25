@@ -1,5 +1,9 @@
 # ClatScope Info Tool & ClatScope Info Tool Mini
 
+**CLATSCOPE NOW HAS AN ANDROID APP!! CHECK IT OUT AT THE LINK BELOW.**
+
+https://play.google.com/store/apps/details?id=com.clatslegal.clatscope
+
 ClatScope Mini is a variant of ClatScope Info Tool that does not require any API keys and will work out of the box. It was released 2025-05-18.
 
 ClatScope Info Tool – A versatile OSINT utility for retrieving geolocation, DNS, WHOIS, phone, email, usernames, person related data, password strength, data breach information and more. Perfect for investigators, pentesters, or anyone looking for a quick reconnaissance script. **This script requires API keys for some functions (Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, RapidAPI). If you do not want to set up your own API keys, below there is a subscription service. Otherwise, you are free to use this script as you see fit.**
