@@ -1,40 +1,39 @@
-# ClatScope Info Tool & ClatScope Info Tool Mini
+## ClatScope Info Tool & ClatScope Mini
+**Version:** 1.17 (2025-05-18)
 
-**CLATSCOPE NOW HAS AN ANDROID APP!! CHECK IT OUT AT THE LINK BELOW.**
-
-https://play.google.com/store/apps/details?id=com.clatslegal.clatscope
-
-ClatScope Mini is a variant of ClatScope Info Tool that does not require any API keys and will work out of the box. It was released 2025-05-18.
-
-ClatScope Info Tool – A versatile OSINT utility for retrieving geolocation, DNS, WHOIS, phone, email, usernames, person related data, password strength, data breach information and more. Perfect for investigators, pentesters, or anyone looking for a quick reconnaissance script. **This script requires API keys for some functions (Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, RapidAPI). If you do not want to set up your own API keys, below there is a subscription service. Otherwise, you are free to use this script as you see fit.**
+**Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
+---
 
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
 ![clatscopecli](https://github.com/user-attachments/assets/85a17e63-8a81-4405-ad47-846367c1c923)
 
-**DONT WANT TO SET UP YOUR API KEYS TO GET FULL FUNCTIONALITY OF CLATSCOPE INFO TOOL? STARTING JANUARY 12, 2024 A SUBSCRIPTION SERVICE IS AVAILABLE. YOU WILL BE PROVIDED WITH A CUSTOM SCRIPT WITH API KEYS THAT LOGS IP ADDRESS, USER AGENT, USAGE, AND OTHER DETAILS TO ENSURE THERE IS NO UNAUTHORIZED ACCESS OR MISUSE. SHARING IS PROHIBITED AND WILL RESULT IN AN IMMEDIATE REVOCATION OF THE KEY. TURN OFF YOUR VPN WHEN USING IT TO PREVENT AN AUTOMATIC BAN FOR IMPOSSIBLE TRAVEL / SHARING. ALL API KEYS ARE PROTECTED BY WAAP & CLOUDFLARE API SECURITY. YOUR SUBSCRIPTION IS VALID FOR 30 DAYS. IF YOU RENEW, YOU WILL BE ISSUED A NEW KEY AT THE START OF YOUR RENEWAL. KEYS ARE ROTATED MONTHLY AND ARE SINGLE USE AND MONITORED. EMAIL SKYLINE92X@PM.ME FOR DETAILS.** 
+### Introducing ClatScope on Android!
 
-**SUBSCRIPTION LINKS:**
+ClatScope is now available as an Android application. Explore the features conveniently from your mobile device by downloading the app below:
 
-**TIER 1: https://buymeacoffee.com/clats97/e/357348.**
+[Download ClatScope App](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope)
 
-**TIER 2: https://buymeacoffee.com/clats97/e/361894**
+### ClatScope Mini
 
-**NO REFUNDS**
+ClatScope Mini is a streamlined variant of the comprehensive ClatScope Info Tool, offering immediate functionality without the need for API keys. Released on May 18, 2025, it is ideal for quick, out-of-the-box OSINT operations, but does not have many of the sophisticated OSINT functions the full version has. 
 
-ClatScope is an OSINT tool that performs various lookups and analyzes provided data.
+### ClatScope Info Tool Overview
 
-Throughout the script, a textual UI is presented, prompting the user for inputs (e.g., IP address, phone number). Results are printed in styled ASCII frames using the pystyle library for aesthetics.
+ClatScope Info Tool is an advanced OSINT (Open-Source Intelligence) utility designed for investigators, cybersecurity professionals, and anyone conducting thorough online reconnaissance. This sophisticated tool integrates multiple external APIs (including Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, RapidAPI) to provide detailed intelligence on IP addresses, domains, emails, phone numbers, usernames, personal data, password security, data breaches, and more.
 
-**Version:** 1.17 (2025-05-18)
-**Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
+### Subscription Service
 
-## Description
-ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility script that queries public APIs, DNS records, and other online resources to gather and display information about IPs, domains, emails, phone numbers, and more. You will need to enter the required API keys to take advantage of all the features ClatScope Info Tool v1.15 has to offer.
+To access the full functionality without the hassle of individual API setup, a subscription-based service is available starting January 12, 2024. Subscribers receive a customized script pre-equipped with secured API keys. These scripts track IP addresses, user agents, usage, and access details to safeguard against misuse or unauthorized sharing. Violations or VPN usage, which leads to impossible travel detections, will lead to immediate revocation.
 
-## Features
+WAAP and Cloudflare API Security protect all API keys. Subscriptions last 30 days, with monthly key rotation to maintain security. For details or subscription inquiries, contact: [skyline92x@pm.me](mailto:skyline92x@pm.me).
 
----
+* [Subscribe Tier 1](https://buymeacoffee.com/clats97/e/357348)
+* [Subscribe Tier 2](https://buymeacoffee.com/clats97/e/361894)
+
+**Note:** All purchases are final; refunds are not provided.
+
+### Key Features of ClatScope Info Tool
 
 1. **IP Address Search** – Extracts IP geolocation, ISP, and provides a Google Maps link.
 2. **Deep Account Search** – Checks over 250 websites for the existence of a given username.
@@ -110,48 +109,54 @@ ClatScope Info Tool is an all-in-one OSINT (Open-Source Intelligence) utility sc
 
 ---
 
-## Installation
-1. **Clone the Repository (or download the zip)**:
-    
+### Installation Instructions
+
+1. Clone the repository or download the ZIP file:
+
     git clone https://github.com/Clats97/ClatScope.git
-    
-2. **Install Dependencies**:
-    Open command prompt and write:
 
-pip install phonenumbers openai requests pystyle dnspython email-validator beautifulsoup4 whois tqdm magic pillow PyPDF2 openpyxl python-docx pptx mutagen tinytag
+2. Install dependencies:
 
- 3. **Run the Script**:
-    Click on the Python file or open it in Visual Studio Code. 
-    
-## Usage
-When you run the script, it will present you with a menu. Simply type the number corresponding to the function you wish to use, and follow the on-screen prompts. For example:
+    pip install phonenumbers openai requests pystyle dnspython email-validator beautifulsoup4 whois tqdm magic pillow PyPDF2 openpyxl python-docx pptx mutagen tinytag
 
-- **IP Info Search** – Option [1]
-- **Deep Account Search** – Option [2]
-- **DNS Search** – Option [4]
-- etc.
+3. Execute the script via Python or an IDE, such as Visual Studio Code.
 
-- **IN ORDER FOR THE PASSWORD STRENGTH ANALYZER TO WORK PROPERLY, YOU MUST OPEN CLATSCOPE INFO TOOL IN THE FOLDER THAT HAS "PASSWORDS.TXT"**
+### User Guide
 
-- You will need to enter your own Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, RapidAPI API keys to use all the features in this tool (unless you subscribe to the above mentioned service).
-- If you want to use the password strength checker against a dictionary or known common-passwords file, place your dictionary file as passwords.txt in the same directory as the script. There is already a dictionary file in the installation package with millions of common passwords.
-- **Important:** If you do not have valid API keys, the related external queries (e.g. person search, reverse phone lookup, business search, travel risk search, Botometer search) will fail or return errors.
+Upon launching ClatScope Info Tool, you will encounter an interactive menu. Select options based on your required OSINT operations:
 
-**THIS TOOL IS NOT PERFECT. THERE IS STILL ROOM FOR IMPROVEMENT, AND I AM WORKING ON ADDING NEW FEATURES AND REFINEMENTS. SOMETIMES A USERNAME SEARCH WILL RESULT IN A FALSE POSITIVE AND/OR THE URL WILL NOT RESOLVE. IT HAS BEEN TESTED AND IS ACCURATE, BUT NOT 100% ACCURATE. VERIFY THE OUTPUTS IF YOU ARE NOT SURE.**
+* **IP Info Search:** \[Option 1]
+* **Deep Account Search:** \[Option 2]
+* **DNS Search:** \[Option 4]
 
-## Contributing
-1. Fork this repository`
-2. Create a new Pull Request
-3. Email me at skyline92x@pm.me for feature requests or ideas.
+Ensure `passwords.txt` is present in the script directory for optimal password analysis performance. The provided dictionary file includes millions of common passwords.
 
-I welcome any improvements or additional OSINT features!
+### API Key Requirements
 
-**Author**
+For full functionality, input your own API keys from Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, and RapidAPI unless using the subscription service.
 
-Joshua M Clatney (Clats97)
+### Accuracy and Improvements
+
+ClatScope Info Tool is rigorously tested, yet not infallible. Occasional false positives may occur, particularly with username searches. Always validate outputs carefully. Continuous enhancements and additional features are regularly implemented.
+
+### Contributing
+
+To contribute, please:
+
+* Fork the repository.
+* Submit a Pull Request.
+* Send suggestions or feature requests to [skyline92x@pm.me](mailto:skyline92x@pm.me).
+
+### Author Information
+
+**Joshua M Clatney (Clats97)**
 
 Ethical Pentesting Enthusiast
 
-Copyright 2024-2025 Joshua M Clatney (Clats97) All Rights Reserved
+Copyright © 2024-2025 Joshua M Clatney (Clats97) All Rights Reserved
+
+### Disclaimer
+
+This software is provided "as-is," without warranties of any kind. The author disclaims liability for misuse or vulnerabilities. Use responsibly and ethically in compliance with applicable laws, regulations, and best practices.
 
 **DISCLAIMER: This project comes with no warranty, express or implied. The author is not responsible for abuse, misuse, or vulnerabilities. Please use responsibly and ethically in accordance with relevant laws, regulations, legislation and best practices.**
