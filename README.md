@@ -157,6 +157,4 @@ Copyright © 2024-2025 Joshua M Clatney (Clats97) All Rights Reserved
 
 ### Disclaimer
 
-This software is provided "as-is," without warranties of any kind. The author disclaims liability for misuse or vulnerabilities. Use responsibly and ethically in compliance with applicable laws, regulations, and best practices.
-
 **DISCLAIMER: This project comes with no warranty, express or implied. The author is not responsible for abuse, misuse, or vulnerabilities. Please use responsibly and ethically in accordance with relevant laws, regulations, legislation and best practices.**
