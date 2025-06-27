@@ -3,9 +3,6 @@
 
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 ---
-[![Get it on Google Play](https://raw.githubusercontent.com/clats97/clatscope/master/images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope)
-
-
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
 ![clatscopecli](https://github.com/user-attachments/assets/85a17e63-8a81-4405-ad47-846367c1c923)
