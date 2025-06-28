@@ -1,5 +1,5 @@
 ## ClatScope Info Tool & ClatScope Mini
-**Version:** 1.17 (2025-05-18)
+**Version:** 1.20 (2025-06-27)
 
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 ---
