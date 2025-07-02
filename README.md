@@ -1,17 +1,15 @@
 ## ClatScope Info Tool & ClatScope Mini
 **Version:** 1.20 (2025-06-27)
 
+ClatScope is now available as an Android application! Explore the features conveniently from your mobile device by downloading the app below:
+
+[Download ClatScope App](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope)
+
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 ---
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
 ![clatscopecli](https://github.com/user-attachments/assets/85a17e63-8a81-4405-ad47-846367c1c923)
-
-### Introducing ClatScope on Android!
-
-ClatScope is now available as an Android application. Explore the features conveniently from your mobile device by downloading the app below:
-
-[Download ClatScope App](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope)
 
 ### ClatScope Mini
 
@@ -105,6 +103,8 @@ WAAP and Cloudflare API Security protect all API keys. Subscriptions last 30 day
 69. **Reverse Image Search** – Finds reference sources for a given photograph.
 70. **Reddit User Search** – Checks if a Reddit account exists for the provided username.
 71. **X/Twitter Search** – Verifies if an email is registered on X (Twitter).
+
+72. **AND MORE!!**
 
 ---
 
