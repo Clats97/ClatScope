@@ -1,6 +1,8 @@
 ## ClatScope Info Tool & ClatScope Mini
 **Version:** 1.20 (2025-06-27)
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope&pcampaignid=web_share)
+
 ClatScope is now available as an Android application! Explore the features conveniently from your mobile device by downloading the app below:
 
 [Download ClatScope App](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope)
