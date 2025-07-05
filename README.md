@@ -3,11 +3,7 @@
  ![Static Badge](https://img.shields.io/badge/Downloads%3A_11.6k_-blue ) ![Static Badge](https://img.shields.io/badge/Subscribers%3A_623_-blue) 
 ClatScope is now available as an Android application! Explore the features conveniently from your mobile device by downloading the app below:
 
-[Get it on Google Play](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope&pcampaignid=web_share)
-![en_get](https://github.com/user-attachments/assets/9ff40e15-4f70-4279-b602-443af979063d)
-
 [![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/search?q=clatscope&c=apps&hl=en)
-
 
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 ---
