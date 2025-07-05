@@ -1,6 +1,6 @@
 ## ClatScope Info Tool & ClatScope Mini
-![GitHub Release](https://img.shields.io/github/v/release/Clats97/clatscope) ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Clats97/ClatScope)
- ![Static Badge](https://img.shields.io/badge/Downloads%3A_11.6k_-blue ) ![Static Badge](https://img.shields.io/badge/Subscribers%3A_623_-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/Clats97/ClatScope)
+![GitHub Release](https://img.shields.io/github/v/release/Clats97/clatscope) ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Clats97/ClatScope) ![GitHub repo size](https://img.shields.io/github/repo-size/Clats97/ClatScope)
+ ![Static Badge](https://img.shields.io/badge/Downloads%3A_11.6k_-blue ) ![Static Badge](https://img.shields.io/badge/Subscribers%3A_623_-blue) 
 
 
 
