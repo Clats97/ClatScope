@@ -1,6 +1,7 @@
 ## ClatScope Info Tool & ClatScope Mini
 ![GitHub Release](https://img.shields.io/github/v/release/Clats97/clatscope) ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Clats97/ClatScope) ![GitHub repo size](https://img.shields.io/github/repo-size/Clats97/ClatScope)
  ![Static Badge](https://img.shields.io/badge/Downloads%3A_11.6k_-blue ) ![Static Badge](https://img.shields.io/badge/Subscribers%3A_623_-blue) 
+
 ClatScope is now available as an Android application! Explore the features conveniently from your mobile device by downloading the app below:
 
 [![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/search?q=clatscope&c=apps&hl=en)
