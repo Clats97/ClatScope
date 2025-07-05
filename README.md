@@ -1,5 +1,5 @@
 ## ClatScope Info Tool & ClatScope Mini
-![GitHub Release](https://img.shields.io/github/v/release/Clats97/clatscope)
+![GitHub Release](https://img.shields.io/github/v/release/Clats97/clatscope)![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/clats97/ClatScope/total)
 
 ClatScope is now available as an Android application! Explore the features conveniently from your mobile device by downloading the app below:
 
