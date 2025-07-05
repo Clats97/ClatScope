@@ -6,6 +6,9 @@ ClatScope is now available as an Android application! Explore the features conve
 [Get it on Google Play](https://play.google.com/store/apps/details?id=com.clatslegal.clatscope&pcampaignid=web_share)
 ![en_get](https://github.com/user-attachments/assets/9ff40e15-4f70-4279-b602-443af979063d)
 
+[![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/search?q=clatscope&c=apps&hl=en)
+
+
 **Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 ---
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
