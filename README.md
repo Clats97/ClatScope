@@ -116,9 +116,9 @@ WAAP and Cloudflare API Security protect all API keys. Subscriptions last 30 day
 
     git clone https://github.com/Clats97/ClatScope.git
 
-2. Install dependencies:
+2. Install dependencies (NOTE: Version 1.20 and above automatically install the required dependencies):
 
-    pip install phonenumbers openai requests pystyle dnspython email-validator beautifulsoup4 whois tqdm magic pillow PyPDF2 openpyxl python-docx pptx mutagen tinytag
+    pip install requests urllib3 pystyle tqdm phonenumbers dnspython email_validator beautifulsoup4 lxml python-whois Pillow PyPDF2 openpyxl python-docx python-pptx mutagen tinytag argon2-cffi passlib
 
 3. Execute the script via Python or an IDE, such as Visual Studio Code.
 
