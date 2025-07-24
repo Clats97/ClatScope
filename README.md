@@ -1,4 +1,5 @@
 ## ClatScope Info Tool & ClatScope Mini
+**Author: Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)**
 ![GitHub followers](https://img.shields.io/github/followers/clats97) ![GitHub forks](https://img.shields.io/github/forks/clats97/clatscope)
  ![GitHub Release](https://img.shields.io/github/v/release/Clats97/clatscope) ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Clats97/ClatScope) ![GitHub repo size](https://img.shields.io/github/repo-size/Clats97/ClatScope)
  ![Static Badge](https://img.shields.io/badge/downloads-%3A_11.6k_-blue ) ![Static Badge](https://img.shields.io/badge/subscribers-%3A_623_-blue) ![Static Badge](https://img.shields.io/badge/stars-%3A_1.1k_-blue) 
@@ -6,8 +7,6 @@
 ClatScope is now available as an Android application! Explore the features conveniently from your mobile device by downloading the app below:
 
 [![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/search?q=clatscope&c=apps&hl=en)
-
-**Author:** Joshua M Clatney aka Clats97 (Ethical Pentesting Enthusiast)
 ---
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
