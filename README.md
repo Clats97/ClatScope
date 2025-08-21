@@ -118,7 +118,7 @@ WAAP and Cloudflare API Security protect all API keys. Subscriptions last 30 day
 
 2. Install dependencies (NOTE: Version 1.20 and above automatically install the required dependencies):
 
-    pip install requests urllib3 pystyle tqdm phonenumbers dnspython email_validator beautifulsoup4 lxml python-whois Pillow PyPDF2 openpyxl python-docx python-pptx mutagen tinytag argon2-cffi passlib
+    pip install requests urllib3 pystyle tqdm phonenumbers dnspython email_validator beautifulsoup4 lxml python-whois python-magic-bin Pillow PyPDF2 openpyxl python-docx python-pptx mutagen tinytag argon2-cffi passlib
 
 3. Execute the script via Python or an IDE, such as Visual Studio Code.
 
