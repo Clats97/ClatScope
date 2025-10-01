@@ -11,7 +11,7 @@ ClatScope is now available as an Android application! Explore the features conve
 ---
 ![clatscopeinfo](https://github.com/user-attachments/assets/e0060201-2e10-41c2-b892-ba73726e1209)
 
-![clatscopecli](https://github.com/user-attachments/assets/85a17e63-8a81-4405-ad47-846367c1c923)
+<img width="990" height="1032" alt="Screenshot 2025-10-01 190027" src="https://github.com/user-attachments/assets/5de6f437-283e-401c-b754-40229fac2770" />
 
 ### ClatScope Mini
 
