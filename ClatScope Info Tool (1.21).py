@@ -9,6 +9,7 @@ import phonenumbers
 import os
 import socket
 import ssl
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import dns.resolver
 from dns import reversename
@@ -38,6 +39,7 @@ from mutagen.flac import FLAC
 import wave
 from mutagen.oggvorbis import OggVorbis
 from tinytag import TinyTag
+import orcarouter_provider
 
 default_color = Colors.red
 HIBP_API_KEY = "INSERT API KEY HERE"
@@ -247,7 +249,7 @@ def person_search(first_name: str, last_name: str, city: str) -> str:
 
     results_text = ""
     try:
-        with requests.post(
+        with orcarouter_provider.post_chat(
             PERPLEXITY_API_URL,
             headers=perplexity_headers,
             json=payload_person_search,
@@ -255,7 +257,7 @@ def person_search(first_name: str, last_name: str, city: str) -> str:
             timeout=60,  
         ) as response:
             if response.status_code != 200:
-                err = f"[!] > Error from Perplexity: HTTP {response.status_code}\n{response.text}\n"
+                err = f"[!] > Error from {orcarouter_provider.active_display_name()}: HTTP {response.status_code}\n{response.text}\n"
                 print(err)
                 return err
             print(
@@ -580,7 +582,7 @@ def reverse_phone_lookup(phone_number: str):
     results_text = ""
     
     try:
-        response = requests.post(
+        response = orcarouter_provider.post_chat(
             PERPLEXITY_API_URL,
             headers=perplexity_headers,
             json=payload,
@@ -617,7 +619,7 @@ def reverse_phone_lookup(phone_number: str):
                         print(error_msg)
                         results_text += error_msg
         else:
-            error_msg = f"[!] > Error from Perplexity: HTTP {response.status_code}\n{response.text}\n"
+            error_msg = f"[!] > Error from {orcarouter_provider.active_display_name()}: HTTP {response.status_code}\n{response.text}\n"
             print(error_msg)
             results_text += error_msg
     except Exception as e:
@@ -1334,6 +1336,19 @@ perplexity_headers = {
     "Content-Type": "application/json",
 }
 
+# OrcaRouter Cyber Inference provider (see orcarouter_provider.py).
+# Either paste a key here, export ORCAROUTER_API_KEY, or enter one from
+# Settings -> AI Provider (entered keys stay in memory for this session).
+ORCAROUTER_API_KEY = "INSERT API KEY HERE"
+orcarouter_provider.set_static_api_key(ORCAROUTER_API_KEY)
+
+
+def ai_configured() -> bool:
+    """True when the selected AI provider has a usable credential."""
+    if orcarouter_provider.is_active():
+        return orcarouter_provider.is_configured()
+    return bool(PERPLEXITY_API_KEY) and PERPLEXITY_API_KEY != "INSERT API KEY HERE"
+
 def business_search():
     clear()
     Write.Print("[!] > Retrieve information about a business.\n", default_color, interval=0)
@@ -1369,7 +1384,7 @@ def business_search():
     }
     out_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_business_info, stream=True)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_business_info, stream=True)
         if response.status_code == 200:
             header = "\nGeneral Business Information:\n"
             print(header, end="")
@@ -1433,7 +1448,7 @@ def business_reputation_search():
 
     result_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
         if response.status_code == 200:
             header = "\nBusiness Reputation Analysis:\n"
             print(header, end="")
@@ -1457,7 +1472,7 @@ def business_reputation_search():
                         print(error_msg)
                         result_text += error_msg
         else:
-            result_text = f"[!] > Error from Perplexity: HTTP {response.status_code}\n{response.text}\n"
+            result_text = f"[!] > Error from {orcarouter_provider.active_display_name()}: HTTP {response.status_code}\n{response.text}\n"
             print(result_text)
     except Exception as e:
         result_text = f"[!] > Exception in retrieving business reputation info: {str(e)}\n"
@@ -1493,7 +1508,7 @@ Provide a comprehensive, highly detailed travel risk analysis for the following 
         "stream": True  
     }
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
         if response.status_code == 200:
             for line in response.iter_lines():
                 if line:
@@ -1513,7 +1528,7 @@ Provide a comprehensive, highly detailed travel risk analysis for the following 
                         print(error_msg)
                         analysis += error_msg
         else:
-            analysis = f"[!] > Error from Perplexity: HTTP {response.status_code}\n{response.text}\n"
+            analysis = f"[!] > Error from {orcarouter_provider.active_display_name()}: HTTP {response.status_code}\n{response.text}\n"
             Write.Print(analysis, Colors.red, interval=0)
     except Exception as e:
         analysis = f"[!] > An error occurred: {str(e)}\n"
@@ -1730,7 +1745,7 @@ def fact_check_text():
 
     output_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_fact_check, stream=True, timeout=60)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_fact_check, stream=True, timeout=60)
         if response.status_code == 200:
             header = "\nFact Checking Results:\n"
             print(header, end="")
@@ -1800,7 +1815,7 @@ def relationship_search():
 
     output_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_relationships, stream=True)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_relationships, stream=True)
         if response.status_code == 200:
             header = "\nEntity Relationship Analysis Results:\n"
             print(header, end="")
@@ -2422,7 +2437,7 @@ def malice_search():
 
     result_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
         if response.status_code == 200:
             for line in response.iter_lines():
                 if line:
@@ -2442,7 +2457,7 @@ def malice_search():
                         print(error_msg)
                         result_text += error_msg
         else:
-            result_text = f"[!] > Error from Perplexity: HTTP {response.status_code}\n{response.text}\n"
+            result_text = f"[!] > Error from {orcarouter_provider.active_display_name()}: HTTP {response.status_code}\n{response.text}\n"
             print(result_text)
     except Exception as e:
         result_text = f"[!] > Error: {str(e)}\n"
@@ -2494,7 +2509,7 @@ def supply_vendor_search():
     
     result_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, stream=True, timeout=60)
         if response.status_code == 200:
             for line in response.iter_lines():
                 if line:
@@ -2514,7 +2529,7 @@ def supply_vendor_search():
                         print(error_msg)
                         result_text += error_msg
         else:
-            result_text = f"[!] > Error from Perplexity: HTTP {response.status_code}\n{response.text}\n"
+            result_text = f"[!] > Error from {orcarouter_provider.active_display_name()}: HTTP {response.status_code}\n{response.text}\n"
             print(result_text)
     except Exception as e:
         result_text = f"[!] > Error: {str(e)}\n"
@@ -3576,8 +3591,8 @@ def autoscan_email_lookup(email_address):
 def autoscan_reverse_phone_lookup(phone_number):
     if not phone_number:
         return "[!] Error: Phone number was not provided for reverse lookup.\n"
-    if not PERPLEXITY_API_KEY or PERPLEXITY_API_KEY == "INSERT API KEY HERE":
-        return "[!] Reverse phone lookup skipped: Perplexity API key not configured.\n"
+    if not ai_configured():
+        return f"[!] Reverse phone lookup skipped: {orcarouter_provider.active_display_name()} API key not configured.\n"
         
     payload = {
         "model": "sonar-reasoning-pro",
@@ -3587,7 +3602,7 @@ def autoscan_reverse_phone_lookup(phone_number):
         ], "max_tokens": 8000, "temperature": 0.5, "stream": False
     }
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=60)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=60)
         response.raise_for_status()
         data = response.json()
         return data['choices'][0]['message']['content'] + "\n"
@@ -3649,8 +3664,8 @@ def autoscan_whois_lookup(domain: str) -> str:
 def autoscan_fact_check_text(text_to_check: str):
     if not text_to_check:
         return "[!] Error: No text provided for fact-checking.\n"
-    if not PERPLEXITY_API_KEY or PERPLEXITY_API_KEY == "INSERT API KEY HERE":
-        return "[!] Fact-check skipped: Perplexity API key not configured.\n"
+    if not ai_configured():
+        return f"[!] Fact-check skipped: {orcarouter_provider.active_display_name()} API key not configured.\n"
 
     payload = {
         "model": "sonar-reasoning-pro",
@@ -3660,7 +3675,7 @@ def autoscan_fact_check_text(text_to_check: str):
         ], "max_tokens": 8000, "temperature": 0.2, "stream": False
     }
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
         response.raise_for_status()
         data = response.json()
         return data['choices'][0]['message']['content'] + "\n"
@@ -3690,8 +3705,8 @@ def autoscan_predicta_search(query, query_type):
 def autoscan_business_search(business_name: str) -> str:
     if not business_name:
         return "[!] Error: Business name was not provided.\n"
-    if not PERPLEXITY_API_KEY or PERPLEXITY_API_KEY == "INSERT API KEY HERE":
-        return "[!] Business search skipped: Perplexity API key not configured.\n"
+    if not ai_configured():
+        return f"[!] Business search skipped: {orcarouter_provider.active_display_name()} API key not configured.\n"
         
     payload = {
         "model": "sonar-reasoning-pro",
@@ -3701,7 +3716,7 @@ def autoscan_business_search(business_name: str) -> str:
         ], "max_tokens": 8000, "temperature": 0.5, "stream": False
     }
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
         response.raise_for_status()
         data = response.json()
         return data['choices'][0]['message']['content'] + "\n"
@@ -3729,8 +3744,8 @@ def autoscan_subdomain_enumeration(domain):
 def autoscan_relationship_search(query: str):
     if not query:
         return "[!] Error: Query was not provided for relationship search.\n"
-    if not PERPLEXITY_API_KEY or PERPLEXITY_API_KEY == "INSERT API KEY HERE":
-        return "[!] Relationship search skipped: Perplexity API key not configured.\n"
+    if not ai_configured():
+        return f"[!] Relationship search skipped: {orcarouter_provider.active_display_name()} API key not configured.\n"
 
     payload = {
         "model": "sonar-reasoning-pro",
@@ -3740,7 +3755,7 @@ def autoscan_relationship_search(query: str):
         ], "max_tokens": 8000, "temperature": 0.5, "stream": False
     }
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
         response.raise_for_status()
         data = response.json()
         return data['choices'][0]['message']['content'] + "\n"
@@ -3767,8 +3782,8 @@ def autoscan_castrick_email_search(email):
 def autoscan_person_search(full_name: str, city: str):
     if not full_name:
         return "[!] Error: Full name was not provided for person search.\n"
-    if not PERPLEXITY_API_KEY or PERPLEXITY_API_KEY == "INSERT API KEY HERE":
-        return "[!] Person search skipped: Perplexity API key not configured.\n"
+    if not ai_configured():
+        return f"[!] Person search skipped: {orcarouter_provider.active_display_name()} API key not configured.\n"
         
     query = f"{full_name} in {city}" if city else full_name
     payload = {
@@ -3779,7 +3794,7 @@ def autoscan_person_search(full_name: str, city: str):
         ], "max_tokens": 8000, "temperature": 0.5, "stream": False
     }
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload, timeout=120)
         response.raise_for_status()
         data = response.json()
         return data['choices'][0]['message']['content'] + "\n"
@@ -3913,7 +3928,7 @@ def conflict_search():
 
     output_text = ""
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_conflict, stream=True)
+        response = orcarouter_provider.post_chat(PERPLEXITY_API_URL, headers=perplexity_headers, json=payload_conflict, stream=True)
         if response.status_code == 200:
             output_text += "\nConflict of Interest Analysis Results:\n"
             for line in response.iter_lines():
@@ -4055,8 +4070,8 @@ def contact_extractor():
         restart()
         return
 
-    if not PERPLEXITY_API_KEY or PERPLEXITY_API_KEY == "INSERT API KEY HERE":
-        Write.Print("[!] > Contact extraction skipped: Perplexity API key not configured.\n", Colors.red, interval=0)
+    if not ai_configured():
+        Write.Print(f"[!] > Contact extraction skipped: {orcarouter_provider.active_display_name()} API key not configured.\n", Colors.red, interval=0)
         restart()
         return
 
@@ -4088,7 +4103,7 @@ def contact_extractor():
     }
 
     try:
-        response = requests.post(
+        response = orcarouter_provider.post_chat(
             PERPLEXITY_API_URL,
             headers=perplexity_headers,
             json=payload,
@@ -4242,6 +4257,92 @@ def x_checker():
     log_option(result)
     restart()
 
+def ai_provider_settings():
+    """Configure the AI provider: built-in Perplexity or OrcaRouter Cyber Inference."""
+    import getpass
+
+    while True:
+        clear()
+        Write.Print("[!] > AI Provider Configuration\n", default_color, interval=0)
+        for line in orcarouter_provider.status_lines():
+            Write.Print("    " + line + "\n", Colors.white, interval=0)
+        provider_menu = """
+    [1] Use built-in Perplexity
+    [2] Use OrcaRouter Cyber Inference
+    [3] Enter / update OrcaRouter API key (hidden input, memory only)
+    [4] Clear OrcaRouter API key
+    [5] Choose OrcaRouter model (from the live catalog)
+    [6] Refresh catalog and show compatible models
+    [0] Back
+"""
+        Write.Print(provider_menu, Colors.white, interval=0)
+        provider_choice = Write.Input("[?] >  ", default_color, interval=0).strip()
+
+        if provider_choice == "0":
+            return
+        elif provider_choice in ("1", "2"):
+            name = orcarouter_provider.BUILTIN_PROVIDER if provider_choice == "1" else orcarouter_provider.PROVIDER_ID
+            orcarouter_provider.set_active_provider(name)
+            Write.Print(f"[+] > AI provider set to {orcarouter_provider.active_display_name()}.\n", Colors.green, interval=0)
+        elif provider_choice == "3":
+            try:
+                raw = getpass.getpass("[?] > OrcaRouter API key (input hidden): ").strip()
+                credential = orcarouter_provider.set_api_key(raw)
+                if credential is None:
+                    Write.Print("[!] > No key entered.\n", Colors.red, interval=0)
+                else:
+                    Write.Print(
+                        f"[+] > Key accepted for this session: {orcarouter_provider.mask_key(credential.value)} "
+                        f"(source: {credential.source}). It is never written to disk.\n",
+                        Colors.green, interval=0,
+                    )
+            except orcarouter_provider.CredentialError as exc:
+                Write.Print(f"[!] > {orcarouter_provider.redact(exc)}\n", Colors.red, interval=0)
+        elif provider_choice == "4":
+            orcarouter_provider.clear_api_key()
+            Write.Print("[+] > OrcaRouter API key cleared for this session.\n", Colors.green, interval=0)
+        elif provider_choice in ("5", "6"):
+            try:
+                result = orcarouter_provider.list_models("chat", refresh=(provider_choice == "6"))
+            except orcarouter_provider.OrcaRouterError as exc:
+                Write.Print(f"[!] > {orcarouter_provider.redact(exc)}\n", Colors.red, interval=0)
+                restart()
+                continue
+            if not result.models:
+                Write.Print(f"[!] > No compatible models ({result.source}).\n", Colors.red, interval=0)
+                restart()
+                continue
+            if result.degraded:
+                Write.Print(f"[!] > Live catalog unavailable ({result.error}); showing {result.source}.\n", Colors.yellow, interval=0)
+            Write.Print(f"[+] > {result.describe()}\n", Colors.green, interval=0)
+            if result.source == "live":
+                reconciled, changed = orcarouter_provider.reconcile_active_model(result.models)
+                if changed:
+                    Write.Print(
+                        f"[!] > The selected model is no longer in the catalog; reset to {reconciled}. "
+                        "Pick a compatible model below.\n",
+                        Colors.yellow, interval=0,
+                    )
+            elif orcarouter_provider.find_model(orcarouter_provider.active_model(), result.models) is None:
+                Write.Print(
+                    f"[!] > The selected model {orcarouter_provider.active_model()} is not in this fallback "
+                    "list; pick a compatible model below.\n",
+                    Colors.yellow, interval=0,
+                )
+            for index, model in enumerate(result.models, start=1):
+                Write.Print(f"    [{index}] {orcarouter_provider.catalog_line(model)}\n", Colors.white, interval=0)
+            if provider_choice == "5":
+                selection = Write.Input("[?] > Model number (blank to keep current): ", default_color, interval=0).strip()
+                if selection.isdigit() and 1 <= int(selection) <= len(result.models):
+                    chosen = result.models[int(selection) - 1]
+                    orcarouter_provider.set_active_model(chosen.id)
+                    Write.Print(f"[+] > Model set to {chosen.id}.\n", Colors.green, interval=0)
+                else:
+                    Write.Print("[!] > Selection unchanged.\n", Colors.red, interval=0)
+            restart()
+        else:
+            Write.Print("[!] > Invalid input.\n", Colors.red, interval=0)
+
 def settings():
     while True:
         try:
@@ -4259,6 +4360,7 @@ def settings():
 |  №   ||       Setting       ||                Description                |
 |======||=====================||===========================================|
 | [1]  || Theme change        || Customize the theme                       |
+| [2]  || AI Provider         || OrcaRouter Cyber Inference setup          |
 | [0]  || Back to menu        || Exit the settings                         |
 ╰─    ─╯╰─                   ─╯╰─                                         ─╯
 """
@@ -4266,6 +4368,8 @@ def settings():
             settings_choice = Write.Input("[?] >  ", default_color, interval=0).strip()
             if settings_choice == "1":
                 change_color()
+            elif settings_choice == "2":
+                ai_provider_settings()
             elif settings_choice == "0":
                 return
             else:
@@ -4983,6 +5087,7 @@ def main():
                 "| [73] || Email Validation          || Retrieves a brief validation report for an email address               |\n"
                 "| [74] || SherlockEye ID Search     || Retrieves an ID number for use with the SherlockEye search function    |\n"
                 "| [75] || SherlockEye Full Search   || Retrieves information from an ID number to search SherlockEye          |\n"
+                "| [76] || AI Provider               || Configures OrcaRouter Cyber Inference (key + model)                     |\n"
                 "| [0]  || Exit                      || Exit ClatScope Info Tool                                               |\n"
                 "| [99] || Settings                  || Customize ClatScope Info Tool (colour)                                 |\n"
                 "╰─    ─╯╰─                         ─╯╰─                                                                      ─╯\n"
@@ -5398,6 +5503,9 @@ def main():
                 sherlockeye_username_search_tool()
             elif choice == "75":         
                 sherlockeye_get_result_tool()
+            elif choice == "76":
+                clear()
+                ai_provider_settings()
             elif choice == "0":
                 clear()
                 Write.Print("[!] > Exiting ClatScope Info Tool.\n", Colors.white, interval=0)
@@ -5413,5 +5521,84 @@ def main():
             Write.Print("[!] > Exiting on user request...\n", Colors.white, interval=0)
             break
 
+def handle_ai_flags(argv):
+    """Non-interactive AI provider flags, handled before the interactive menu.
+
+    Examples:
+        python3 "ClatScope Info Tool (1.21).py" --ai-status
+        python3 "ClatScope Info Tool (1.21).py" --ai-models [--ai-modality image]
+        python3 "ClatScope Info Tool (1.21).py" --ai-provider orcarouter --ai-model orcarouter/auto
+    Returns True when a flag was handled (and the tool should exit).
+    """
+    import argparse as _argparse
+
+    parser = _argparse.ArgumentParser(prog="ClatScope Info Tool", add_help=False)
+    parser.add_argument("--ai-provider", choices=orcarouter_provider.SUPPORTED_PROVIDERS)
+    parser.add_argument("--ai-model")
+    parser.add_argument("--ai-status", action="store_true")
+    parser.add_argument("--ai-models", action="store_true")
+    parser.add_argument("--ai-capability", default="chat", choices=orcarouter_provider.SUPPORTED_CAPABILITIES)
+    parser.add_argument("--ai-modality", default=None)
+    parser.add_argument("--ai-refresh", action="store_true")
+    known, _ = parser.parse_known_args(argv)
+
+    if not any([known.ai_provider, known.ai_model, known.ai_status, known.ai_models]):
+        return False
+
+    if known.ai_provider:
+        orcarouter_provider.set_active_provider(known.ai_provider)
+        Write.Print(f"[+] > AI provider set to {orcarouter_provider.active_display_name()}.\n", Colors.green, interval=0)
+
+    if known.ai_status:
+        for line in orcarouter_provider.status_lines():
+            print(line)
+        if orcarouter_provider.is_active():
+            try:
+                result = orcarouter_provider.list_models("chat", refresh=known.ai_refresh)
+                print(f"Catalog         : {result.describe()}")
+                if result.source == "live":
+                    model, changed = orcarouter_provider.reconcile_active_model(result.models)
+                    if changed:
+                        print(
+                            f"[!] > The previously selected model is no longer in the catalog; "
+                            f"reset to {model}. Pick another with --ai-model or [76] AI Provider.",
+                            file=sys.stderr,
+                        )
+            except orcarouter_provider.OrcaRouterError as exc:
+                print(f"Catalog         : unavailable ({orcarouter_provider.redact(exc)})")
+
+    if known.ai_models:
+        result = orcarouter_provider.list_models(known.ai_capability, known.ai_modality, refresh=known.ai_refresh)
+        print(result.describe())
+        for model in result.models:
+            print("  " + orcarouter_provider.catalog_line(model))
+
+    if known.ai_model:
+        try:
+            result = orcarouter_provider.list_models("chat", refresh=known.ai_refresh)
+        except orcarouter_provider.OrcaRouterError as exc:
+            print(f"[!] > Cannot validate {known.ai_model}: {orcarouter_provider.redact(exc)}", file=sys.stderr)
+            return True
+        if result.degraded:
+            print(
+                f"[!] > Cannot validate {known.ai_model}: live catalog unavailable "
+                f"({result.error}). Nothing was changed.",
+                file=sys.stderr,
+            )
+            return True
+        if orcarouter_provider.find_model(known.ai_model, result.models) is None:
+            print(
+                f"[!] > {known.ai_model} is not in the current OrcaRouter chat catalog; "
+                "run with --ai-models to list compatible ids.",
+                file=sys.stderr,
+            )
+            return True
+        orcarouter_provider.set_active_model(known.ai_model)
+        Write.Print(f"[+] > Model set to {known.ai_model}.\n", Colors.green, interval=0)
+
+    return True
+
+
 if __name__ == "__main__":
-    main()
+    if not handle_ai_flags(sys.argv[1:]):
+        main()

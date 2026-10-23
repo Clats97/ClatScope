@@ -136,6 +136,56 @@ Ensure `passwords.txt` is present in the script directory for optimal password a
 
 For full functionality, input your own API keys from Perplexity, Have I Been Pwned, Hunter, Hudson Rock, Castrick, Predicta, and RapidAPI unless using the subscription service.
 
+### OrcaRouter Cyber Inference (optional AI provider)
+
+ClatScope's AI-assisted searches (person, business, relationship, conflict, fact-check,
+malice, supply/vendor, contact extraction and the AutoScan wrappers) can be routed through
+**OrcaRouter Cyber Inference**, a named provider on [OrcaRouter](https://www.orcarouter.ai) —
+an OpenAI-compatible AI gateway that routes many providers behind one endpoint. It is built for
+security teams doing **authorized, scoped** security work: red teams get the OrcaCyber models and
+blue teams get gateway-level controls on the same endpoint, where a general-purpose gateway often
+refuses or silently downgrades security-engineering prompts.
+
+* Provider page: <https://www.orcarouter.ai/cyber>
+* Cyber model catalog: <https://www.orcarouter.ai/models?tier=cyber>
+* API reference: <https://docs.orcarouter.ai/api-reference/chat/create-a-chat-completion>
+* Cyber models guide: <https://docs.orcarouter.ai/getting-started/cyber-models>
+* API keys: <https://www.orcarouter.ai/console/token>
+
+**Enable it.** Open the tool, choose `[76] AI Provider` (also under `[99] Settings → [2] AI Provider`),
+select *OrcaRouter Cyber Inference*, and either paste an `sk-orca-…` API key (hidden input, kept in
+memory for the session) or set the key before starting:
+
+```bash
+export ORCAROUTER_API_KEY="sk-orca-…"      # or edit ORCAROUTER_API_KEY in the script
+python3 "ClatScope Info Tool (1.21).py"
+```
+
+Non-interactive equivalents:
+
+```bash
+python3 "ClatScope Info Tool (1.21).py" --ai-provider orcarouter --ai-status
+python3 "ClatScope Info Tool (1.21).py" --ai-models --ai-modality image
+python3 -m orcarouter_provider models --capability chat
+python3 -m orcarouter_provider set-key     # reads the key from stdin, never stores it on disk
+```
+
+**Which model?** The model picker is built from the live catalog
+(`GET https://api.orcarouter.ai/v1/models`, fetched with your key), so it only lists models your
+key can actually call. Three tiers are recommended:
+
+| Tier | Model | When |
+| --- | --- | --- |
+| Default | `orcarouter/auto` | Automatic routing; works with any OrcaRouter key. |
+| Cyber (recommended for security teams) | `orca/orcacyber-ultra-1.0` — OrcaCyber Ultra 1.0 | Large-codebase security scanning and multi-step security reasoning. Requires the security-tier grant. |
+| Cyber (recommended for security teams) | `orca/orcacyber-zero-1.5` — OrcaCyber Zero 1.5 | OrcaCyber harness model for long, multi-step security workflows. Requires the security-tier grant. |
+| General fallback | `orcarouter/fusion` | General-purpose route when a dedicated model is unavailable. |
+
+If the catalog cannot be reached, the picker falls back to a small, verified cold-start list
+(`orcarouter/auto`, `openai/gpt-5.5`, `anthropic/claude-opus-4.8`, `google/gemini-3.5-flash`,
+`deepseek/deepseek-v4-pro`) and labels the result as degraded. Nothing is sent anywhere until you
+select OrcaRouter; the built-in Perplexity path is unchanged by default.
+
 ### Accuracy and Improvements
 
 ClatScope Info Tool is rigorously tested, yet not infallible. Occasional false positives may occur, particularly with username searches. Always validate outputs carefully. Continuous enhancements and additional features are regularly implemented.
